@@ -1,20 +1,44 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Packer centos7 base box automation
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+This packer template creates a basic centos 7 box with a predefined administrator user called vagrant, based on the bento boxes.
+The value of these images lies in the larger default size, a requirement given the amount of disk space consumed by our builds.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+The scripts in this repository are date based. They will create and upload images with version number (current date).0.
+It is therefore necessary to run them on the same day.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## How do I use this?
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+You need the following software installed:
+
+- Packer: install it via choco install packer on windows or via brew on MacOS
+- Virtualbox: required for creating an image that runs on virtualbox
+- VMWare Fusion/Workstation: required for running an image that runs on VMWare
+
+Once these are installed, open a command line window, cd in this directory and either or both
+
+build-virtualbox.sh
+build-vmware.sh
+
+## How do I make the boxes available?
+
+In order to make an updated box available, you should upload it to the ccdc-vagrant-repo repository in artifactory
+To do that, you first need to find out your api key. Head to [artifactory](https://artifactory.ccdc.cam.ac.uk/) and log in.
+Sekect the ccdc-vagrant repository in the Set me up box on the main page. A dialog will pop up with a password box. Enter your password in the password box.
+The curl url in the Deploy section will be updated with your api key. It's the string appearing after X-JFrog-Art-Api:
+
+Copy that key and run in a shell
+
+  export ARTIFACTORY_API_KEY='key'
+
+After that, run one or both scripts called upload-virtualbox.sh and upload-vmware.sh
+
+## Where do I begin stydying this?
+
+The [documentation on the bento repository](https://github.com/chef/bento) provides some insight on the process.
+This repository simply taylors what's there to our needs (larger hard drive, boxes for vmware and virtualbox).
+
+You should have a working understanding of [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) as they are used to pull the packer definitions from bento.
+
+Why Packer? https://www.packer.io/intro/why.html
+
+Packer documentation: https://www.packer.io/docs/index.html
