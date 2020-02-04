@@ -14,7 +14,7 @@ fi
 pushd $DIR
 
 BOX_NAME="ccdc-basebox/centos-7.7"
-PROVIDER="vmware"
+PROVIDER="vmware_desktop"
 BOX_VERSION="$(date +%Y%m%d).0"
 FILENAME=$BOX_NAME.$BOX_VERSION.$PROVIDER.box
 PATH_TO_FILE=output/$FILENAME
