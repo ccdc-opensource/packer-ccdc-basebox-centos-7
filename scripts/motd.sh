@@ -1,7 +1,8 @@
 #!/bin/sh -eux
 
 bento='
-This system is built by the Bento project by Chef Software
+This system is built using the provisioning scripts in this repository
+https://dev.azure.com/ccdc/build-systems/_git/packer-ccdc-basebox-centos-7
 More information can be found at https://github.com/chef/bento'
 
 if [ -d /etc/update-motd.d ]; then
