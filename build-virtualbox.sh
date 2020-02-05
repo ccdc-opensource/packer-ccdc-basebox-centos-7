@@ -10,6 +10,7 @@ mkdir -p output
 echo 'building base images'
 packer build \
   -only=virtualbox-iso \
+  -except=vsphere,vsphere-template \
   -var 'build_directory=./output/' \
   -var 'disk_size=400000' \
   -var 'cpus=2' \

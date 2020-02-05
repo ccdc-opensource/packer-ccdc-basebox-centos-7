@@ -53,7 +53,7 @@
       "vmx_data": {
         "cpuid.coresPerSocket": "1"
       },
-      "vmx_remove_ethernet_interfaces": true
+      "vmx_remove_ethernet_interfaces": "{{ user `vmx_remove_ethernet_interfaces` }}"
     },
     {
       "boot_command": [
