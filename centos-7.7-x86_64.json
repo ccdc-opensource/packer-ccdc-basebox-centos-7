@@ -164,6 +164,7 @@
   "provisioners": [
     {
       "environment_vars": [
+        "CUSTOMISE_FOR_BUILDMACHINE={{user `customise_for_buildmachine`}}",
         "HOME_DIR=/home/vagrant",
         "http_proxy={{user `http_proxy`}}",
         "https_proxy={{user `https_proxy`}}",
@@ -180,6 +181,7 @@
         "{{template_dir}}/scripts/virtualbox.sh",
         "{{template_dir}}/scripts/vmware.sh",
         "{{template_dir}}/scripts/parallels.sh",
+        "{{template_dir}}/scripts/customisation-for-buildmachines.sh",
         "{{template_dir}}/scripts/cleanup.sh",
         "{{template_dir}}/scripts/minimize.sh"
       ],
@@ -188,6 +190,7 @@
   ],
   "variables": {
     "box_basename": "centos-7.7",
+    "customise_for_buildmachine": "0",
     "build_directory": "../../builds",
     "http_directory": "{{template_dir}}/http",
     "build_timestamp": "{{isotime \"20060102150405\"}}",
