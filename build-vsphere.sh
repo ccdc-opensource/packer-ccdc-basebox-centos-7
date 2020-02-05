@@ -3,7 +3,13 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 pushd $DIR
-
+if [[ ! -e ./vsphere-environment-do-not-add ]]
+then
+  echo "Please add a vsphere-environment-do-not-add file to set up the environment variables required to deploy"
+  echo "These vary based on the target VMWare server. The list can be found at the bottom of the packer template."
+  return 1
+fi
+source ./vsphere-environment-do-not-add
 echo 'creating output directory'
 mkdir -p output
 
