@@ -6,6 +6,7 @@ pushd $DIR
 
 echo 'creating output directory'
 mkdir -p output
+rm -rf ./output/packer-centos-7.7-x86_64-virtualbox
 
 echo 'building base images'
 packer build \
