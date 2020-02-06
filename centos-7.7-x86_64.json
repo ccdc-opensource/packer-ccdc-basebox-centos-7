@@ -51,7 +51,8 @@
       "memory": "{{ user `memory` }}",
       "cpus": "{{ user `cpus` }}",
       "vmx_data": {
-        "cpuid.coresPerSocket": "1"
+        "cpuid.coresPerSocket": "1",
+        "virtualHW.version": "13"
       },
       "vmx_remove_ethernet_interfaces": "{{ user `vmx_remove_ethernet_interfaces` }}"
     },
