@@ -18,7 +18,7 @@ rm -rf ./output//packer-centos-7.7-x86_64-vmware
 echo 'building base images'
 packer build \
   -only=vmware-iso \
-  -except=vagrant,vsphere-template \
+  -except=vagrant \
   -var 'customise_for_buildmachine=1' \
   -var 'build_directory=./output/' \
   -var 'disk_size=400000' \
