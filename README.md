@@ -25,6 +25,7 @@ In order to make an updated box available, you should upload it to the ccdc-vagr
 To do that, you first need to find out your api key. Head to [artifactory](https://artifactory.ccdc.cam.ac.uk/) and log in.
 Sekect the ccdc-vagrant repository in the Set me up box on the main page. A dialog will pop up with a password box. Enter your password in the password box.
 The curl url in the Deploy section will be updated with your api key. It's the string appearing after X-JFrog-Art-Api:
+If the curl url doesn't have an X-JFrog-Art-Api: username but uses your username instead, click on the Welcome, (username) button on the top right corner in artifactory, and select 'Edit Profile', then unlock your profile and generate an API key.
 
 Copy that key and run in a shell
 
