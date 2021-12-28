@@ -86,7 +86,7 @@
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
         "disk.EnableUUID": "TRUE",
-        "virtualHW.version": "13"
+        "virtualHW.version": "17"
       },
       "vmx_remove_ethernet_interfaces": "{{ user `vmx_remove_ethernet_interfaces` }}"
     },
